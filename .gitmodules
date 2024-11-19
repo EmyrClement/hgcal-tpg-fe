@@ -1,3 +1,0 @@
-[submodule "TPGStage2Emulation/HLS_arbitrary_Precision_Types"]
-	path = TPGStage2Emulation/HLS_arbitrary_Precision_Types
-	url = https://github.com/Xilinx/HLS_arbitrary_Precision_Types.git

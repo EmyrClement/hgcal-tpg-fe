@@ -14,17 +14,6 @@ In case of non-lxplus machines, you may need ROOT package in your path for compi
 
 ## Compile and run
 
-### Stage 2 standalone emulation
-
-The Stage 2 emulation uses some code from CMSSW, which obtained via a sparse checkout of CMSSW, and also the HLS arbitrary precision types, which are included via a submodule.  Run the following to set these up:
-```
-cd TPGStage2Emulation;
-source getCMSSWCode.sh;
-cd ..;
-git submodule init;
-git submodule update
-```
-
 ### Test-beam data of August 2024
 To process the test-beam binary files
 ```

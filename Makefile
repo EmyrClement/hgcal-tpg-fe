@@ -1,7 +1,7 @@
 #all: emul_test-beam_Sep23 findEMax read_econt_Jul24 GenerateEmpRxFile
 LDFLAGS=-L$(HOME)/Software/yaml-cpp/lib64
 CPPFLAGS=-I$(HOME)/Software/yaml-cpp/include -I common/inc -I inc -I TPGStage1Emulation/ -I TPGFEEmulation/ -I`root-config --incdir`
-CPPFLAGSSTAGE2=-I inc -I TPGStage2Emulation/ -I TPGStage2Emulation/CMSSWCode -I TPGStage2Emulation/HLS_arbitrary_Precision_Types/include/ -I`root-config --incdir` 
+CPPFLAGSSTAGE2=-I inc -I TPGStage2Emulation/ -I`root-config --incdir` 
 
 all:  readNTuple.exe  fillInputData.exe testStage2SemiClustering.exe stage2HtoTauTauEnergyCorrelation.exe ntupleMCInfo.exe vbfjet.exe #findFixedpattern.exe findEMax.exe tpgdata_3T_tcproc.exe  tpgdata_3T_fe.exe  scanadc_Sep24.exe dump_event.exe tpgdata_2T_fe.exe emul_Sep24.exe emul_3T_Sep24.exe  #loop_emul_Sep24.exe scanconfigval_Sep24.exe emul_Sep24.exe validateFixedADC.exe # findEMax.exe GenerateEmpRxFile.exe dump_event.exe emul_test-beam_Sep23.exe 
 

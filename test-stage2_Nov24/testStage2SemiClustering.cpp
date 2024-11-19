@@ -263,20 +263,10 @@ int main(int argc, char** argv)
     for (uint32_t isect = 0 ; isect < 6 ; isect++ )
       for(TPGTriggerCellFloats const& tcf : vTcw[isect]) tcxyOverZ[isect]->Fill(tcf.getXOverZF(),tcf.getYOverZF());
 
-    std::vector<TPGClusterData> vCld[6];
-    std::vector<std::vector<l1thgcfirmware::HGCalCluster_HW>> vCldCMSSW(6);
+    std::vector<TPGClusterData> vCld[6];    
     TPGStage2Emulation::Stage2 s2Clustering;
     for (uint32_t isect = 0 ; isect < 6 ; isect++ ) {
-      s2Clustering.run(vTcw[isect],vCld[isect],vCldCMSSW[isect]);
-
-      std::cout << "Got cluster : " << vCld[isect].size() << " " << vCldCMSSW[isect].size() << std::endl;
-      if ( vCld[isect].size() > 0 && vCldCMSSW[isect].size() > 0 ){
-        const auto& cld = vCld[isect].at(0);
-        const auto& hwCluster = vCldCMSSW[isect].at(0);
-        std::cout << cld.getEnergy() << " " << hwCluster.e << std::endl;
-        std::cout << cld.getEta() << " " << hwCluster.w_eta << std::endl;
-        std::cout << cld.getPhi() << " " << hwCluster.w_phi << std::endl;
-      }
+      s2Clustering.run(vTcw[isect],vCld[isect]);
       if(doPrint) std::cout << isect << ", Size of Tcs: " << vTcw[isect].size() << ", Size of Clusters: " << vCld[isect].size() << std::endl;
     }
     for (uint32_t isect = 0; isect < 6; isect++)
